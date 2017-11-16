@@ -1,9 +1,8 @@
 # GIATester v 1.3.1
 
-A software package for preparation, implementation and evaluation of knowledge control organized in test form
-
+A software package for preparation, implementation and evaluation of knowledge control organized in test form /
+ Инструмент для автоматизированной подготовки, проведения и оценки тестовых заданий
 #
-
 Annotation (first page of helpfile):
 
 Программный комплекс GIATester версии 1.3.1 позволяет выполнять полный цикл действий, необходимых для подготовки, проведения и оценки результатов государственной итоговой аттестации (ГИА), а также любых других форм контроля, проводимых в виде тестирования. 
