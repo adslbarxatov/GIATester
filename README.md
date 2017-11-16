@@ -27,3 +27,5 @@ Annotation (first page of helpfile):
 #
 
 Needs Windows XP and newer, Framework 4.0 and newer. Interface language: ru_ru. Help language: ru_ru
+
+Требуется ОС Windows XP и новее, Framework 4.0 и новее. Язык интерфейса: ru_ru. Язык документации: ru_ru
