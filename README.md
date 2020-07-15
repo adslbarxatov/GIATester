@@ -1,11 +1,12 @@
 # GIATester v 1.3.1
 
-A software package for preparation, implementation and evaluation of knowledge control
-organized in test form / Инструмент для автоматизированной подготовки, проведения и оценки тестовых заданий
+A software package for preparation, implementation and evaluation of knowledge control organized in test form 
 
-#
+Инструмент для автоматизированной подготовки, проведения и оценки тестовых заданий
 
-Annotation (first page of helpfile):
+
+
+## Annotation (first page of help file) / Краткое описание (первая страница файла справки)
 
 Программный комплекс GIATester версии 1.3.1 позволяет выполнять полный цикл действий, необходимых для подготовки, проведения и оценки результатов государственной итоговой аттестации (ГИА), а также любых других форм контроля, проводимых в виде тестирования. 
 Соответственно, функциями комплекса являются:
@@ -26,16 +27,26 @@ Annotation (first page of helpfile):
 
 База программы, результаты и эталоны могут храниться не только на локальном ПК, но и в сетевом расположении; за связь с ними отвечает единая для всех компонентов комплекса конфигурация.
 
-#
 
-We've formalized our [Applications development policy (ADP)](https://vk.com/@rdaaow_fupl-adp).
-We're strongly recommend reading it before using our products.
 
-Мы формализовали нашу [Политику разработки приложений (ADP)](https://vk.com/@rdaaow_fupl-adp).
-Настоятельно рекомендуем ознакомиться с ней перед использованием наших продуктов.
-
-#
+## Requirements / Требования
 
 Needs Windows XP and newer, Framework 4.0 and newer. Interface language: ru_ru. Help language: ru_ru
 
 Требуется ОС Windows XP и новее, Framework 4.0 и новее. Язык интерфейса: ru_ru. Язык документации: ru_ru
+
+
+
+## Development policy and EULA / Политика разработки и EULA
+
+This [Policy (ADP)](https://vk.com/@rdaaow_fupl-adp), its positions, conclusion, EULA and application methods
+describes general rules that we follow in all of our development processes, released applications and implemented
+ideas.
+**It must be acquainted by participants and users before using any of laboratory's products.
+By downloading them, you agree to this Policy**
+
+Данная [Политика (ADP)](https://vk.com/@rdaaow_fupl-adp), её положения, заключение, EULA и способы применения
+описывают общие правила, которым мы следуем во всех наших процессах разработки, вышедших в релиз приложениях
+и реализованных идеях.
+**Обязательна к ознакомлению всем участникам и пользователям перед использованием любого из продуктов лаборатории.
+Загружая их, вы соглашаетесь с этой Политикой**
