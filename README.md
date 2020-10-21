@@ -1,10 +1,12 @@
 # GIATester v 1.3.1
 
+
 A software package for preparation, implementation and evaluation of knowledge control organized in test form
 
 Инструмент для автоматизированной подготовки, проведения и оценки тестовых заданий
 
 
+#
 
 ## Annotation (first page of help file) / Краткое описание (первая страница файла справки)
 
@@ -12,11 +14,8 @@ A software package for preparation, implementation and evaluation of knowledge c
 Соответственно, функциями комплекса являются:
 
 - Разработка тестовых заданий с возможностью формирования вариативных текстов вопросов в каждой позиции теста;
-
 - Проведение тестирования с использованием одноразовых ключей для каждого тестируемого;
-
 - Автоматизированная оценка результатов тестирования;
-
 - Защита тестовых заданий, ответов тестируемых и эталонов от постороннего доступа.
 
 Для хранения тестов, ответов и эталонов используется система защиты, не позволяющая редактировать их без повреждения структуры. В купе с соблюдением правил использования комплекса это обеспечивает достоверность получаемых результатов.
@@ -27,6 +26,8 @@ A software package for preparation, implementation and evaluation of knowledge c
 
 База программы, результаты и эталоны могут храниться не только на локальном ПК, но и в сетевом расположении; за связь с ними отвечает единая для всех компонентов комплекса конфигурация.
 
+&nbsp;
+
 
 
 ## Requirements / Требования
@@ -34,6 +35,8 @@ A software package for preparation, implementation and evaluation of knowledge c
 Needs Windows XP and newer, Framework 4.0 and newer. Interface language: ru_ru. Help language: ru_ru
 
 Требуется ОС Windows XP и новее, Framework 4.0 и новее. Язык интерфейса: ru_ru. Язык документации: ru_ru
+
+&nbsp;
 
 
 
@@ -44,6 +47,8 @@ describes general rules that we follow in all of our development processes, rele
 ideas.
 **It must be acquainted by participants and users before using any of laboratory's products.
 By downloading them, you agree to this Policy**
+
+#
 
 Данная [Политика (ADP)](https://vk.com/@rdaaow_fupl-adp), её положения, заключение, EULA и способы применения
 описывают общие правила, которым мы следуем во всех наших процессах разработки, вышедших в релиз приложениях
