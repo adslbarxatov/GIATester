@@ -42,7 +42,7 @@ Needs Windows XP and newer, Framework 4.0 and newer. Interface language: ru_ru. 
 
 ## Development policy and EULA / Политика разработки и EULA
 
-This [Policy (ADP)](https://vk.com/@rdaaow_fupl-adp), its positions, conclusion, EULA and application methods
+This [Policy (ADP)](https://vk.com/@rd_aaow_fdl-adp), its positions, conclusion, EULA and application methods
 describes general rules that we follow in all of our development processes, released applications and implemented
 ideas.
 **It must be acquainted by participants and users before using any of laboratory's products.
@@ -50,7 +50,7 @@ By downloading them, you agree to this Policy**
 
 #
 
-Данная [Политика (ADP)](https://vk.com/@rdaaow_fupl-adp), её положения, заключение, EULA и способы применения
+Данная [Политика (ADP)](https://vk.com/@rd_aaow_fdl-adp), её положения, заключение, EULA и способы применения
 описывают общие правила, которым мы следуем во всех наших процессах разработки, вышедших в релиз приложениях
 и реализованных идеях.
 **Обязательна к ознакомлению всем участникам и пользователям перед использованием любого из продуктов лаборатории.
