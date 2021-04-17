@@ -49,22 +49,21 @@ int iAgruntMuzzleFlash;
 //=========================================================
 // Monster's Anim Events Go Here
 //=========================================================
-#define		AGRUNT_AE_HORNET1	( 1 )
-#define		AGRUNT_AE_HORNET2	( 2 )
-#define		AGRUNT_AE_HORNET3	( 3 )
-#define		AGRUNT_AE_HORNET4	( 4 )
-#define		AGRUNT_AE_HORNET5	( 5 )
-// some events are set up in the QC file that aren't recognized by the code yet.
-#define		AGRUNT_AE_PUNCH		( 6 )
-#define		AGRUNT_AE_BITE		( 7 )
+#define		AGRUNT_AE_HORNET1	 (1 )
+#define		AGRUNT_AE_HORNET2	 (2 )
+#define		AGRUNT_AE_HORNET3	 (3 )
+#define		AGRUNT_AE_HORNET4	 (4 )
+#define		AGRUNT_AE_HORNET5	 (5 )
 
-#define		AGRUNT_AE_LEFT_FOOT	 ( 10 )
-#define		AGRUNT_AE_RIGHT_FOOT ( 11 )
+// some events are set up in the QC file that aren't recognized by the code yet
+#define		AGRUNT_AE_PUNCH		 (6 )
+#define		AGRUNT_AE_BITE		 (7 )
 
-#define		AGRUNT_AE_LEFT_PUNCH ( 12 )
-#define		AGRUNT_AE_RIGHT_PUNCH ( 13 )
+#define		AGRUNT_AE_LEFT_FOOT	  (10 )
+#define		AGRUNT_AE_RIGHT_FOOT  (11 )
 
-
+#define		AGRUNT_AE_LEFT_PUNCH  (12 )
+#define		AGRUNT_AE_RIGHT_PUNCH  (13 )
 
 #define		AGRUNT_MELEE_DIST	100
 
@@ -126,66 +125,64 @@ LINK_ENTITY_TO_CLASS (monster_alien_grunt, CAGrunt);
 
 TYPEDESCRIPTION	CAGrunt::m_SaveData[] =
 	{
-		DEFINE_FIELD (CAGrunt, m_fCanHornetAttack, FIELD_BOOLEAN),
-		DEFINE_FIELD (CAGrunt, m_flNextHornetAttackCheck, FIELD_TIME),
-		DEFINE_FIELD (CAGrunt, m_flNextPainTime, FIELD_TIME),
-		DEFINE_FIELD (CAGrunt, m_flNextSpeakTime, FIELD_TIME),
-		DEFINE_FIELD (CAGrunt, m_flNextWordTime, FIELD_TIME),
-		DEFINE_FIELD (CAGrunt, m_iLastWord, FIELD_INTEGER),
+	DEFINE_FIELD (CAGrunt, m_fCanHornetAttack, FIELD_BOOLEAN),
+	DEFINE_FIELD (CAGrunt, m_flNextHornetAttackCheck, FIELD_TIME),
+	DEFINE_FIELD (CAGrunt, m_flNextPainTime, FIELD_TIME),
+	DEFINE_FIELD (CAGrunt, m_flNextSpeakTime, FIELD_TIME),
+	DEFINE_FIELD (CAGrunt, m_flNextWordTime, FIELD_TIME),
+	DEFINE_FIELD (CAGrunt, m_iLastWord, FIELD_INTEGER),
 	};
 
 IMPLEMENT_SAVERESTORE (CAGrunt, CSquadMonster);
 
 const char* CAGrunt::pAttackHitSounds[] =
 	{
-		"zombie/claw_strike1.wav",
-		"zombie/claw_strike2.wav",
-		"zombie/claw_strike3.wav",
+	"zombie/claw_strike1.wav",
+	"zombie/claw_strike2.wav",
+	"zombie/claw_strike3.wav",
 	};
 
 const char* CAGrunt::pAttackMissSounds[] =
 	{
-		"zombie/claw_miss1.wav",
-		"zombie/claw_miss2.wav",
+	"zombie/claw_miss1.wav",
+	"zombie/claw_miss2.wav",
 	};
 
 const char* CAGrunt::pAttackSounds[] =
 	{
-		"agrunt/ag_attack1.wav",
-		"agrunt/ag_attack2.wav",
-		"agrunt/ag_attack3.wav",
+	"agrunt/ag_attack1.wav",
+	"agrunt/ag_attack2.wav",
+	"agrunt/ag_attack3.wav",
 	};
 
 const char* CAGrunt::pDieSounds[] =
 	{
-		"agrunt/ag_die1.wav",
-		"agrunt/ag_die4.wav",
-		"agrunt/ag_die5.wav",
+	"agrunt/ag_die1.wav",
+	"agrunt/ag_die2.wav",
+	"agrunt/ag_die3.wav",
 	};
 
 const char* CAGrunt::pPainSounds[] =
 	{
-		"agrunt/ag_pain1.wav",
-		"agrunt/ag_pain2.wav",
-		"agrunt/ag_pain3.wav",
-		"agrunt/ag_pain4.wav",
-		"agrunt/ag_pain5.wav",
+	"agrunt/ag_pain1.wav",
+	"agrunt/ag_pain2.wav",
+	"agrunt/ag_pain3.wav",
 	};
 
 const char* CAGrunt::pIdleSounds[] =
 	{
-		"agrunt/ag_idle1.wav",
-		"agrunt/ag_idle2.wav",
-		"agrunt/ag_idle3.wav",
-		"agrunt/ag_idle4.wav",
+	"agrunt/ag_idle1.wav",
+	"agrunt/ag_idle2.wav",
+	"agrunt/ag_idle3.wav",
+	"agrunt/ag_idle4.wav",
 	};
 
 const char* CAGrunt::pAlertSounds[] =
 	{
-		"agrunt/ag_alert1.wav",
-		"agrunt/ag_alert3.wav",
-		"agrunt/ag_alert4.wav",
-		"agrunt/ag_alert5.wav",
+	"agrunt/ag_alert1.wav",
+	"agrunt/ag_alert2.wav",
+	"agrunt/ag_alert3.wav",
+	"agrunt/ag_alert4.wav",
 	};
 
 //=========================================================
@@ -310,13 +307,13 @@ void CAGrunt::PrescheduleThink (void)
 
 			do
 				{
-				num = RANDOM_LONG (0, ARRAYSIZE (pIdleSounds) - 1);
+				num = RANDOM_LONG (0, HLARRAYSIZE (pIdleSounds) - 1);
 				} while (num == m_iLastWord);
 
 				m_iLastWord = num;
 
 				// play a new sound
-				EMIT_SOUND (ENT (pev), CHAN_VOICE, pIdleSounds[num], 1.0, ATTN_NORM);
+				EMIT_SOUND (ENT (pev), CHAN_VOICE, pIdleSounds[num], 1.0, ATTN_MEDIUM);
 
 				// is this word our last?
 				if (RANDOM_LONG (1, 10) <= 1)
@@ -339,7 +336,7 @@ void CAGrunt::DeathSound (void)
 	{
 	StopTalking ();
 
-	EMIT_SOUND (ENT (pev), CHAN_VOICE, pDieSounds[RANDOM_LONG (0, ARRAYSIZE (pDieSounds) - 1)], 1.0, ATTN_NORM);
+	EMIT_SOUND (ENT (pev), CHAN_VOICE, pDieSounds[RANDOM_LONG (0, HLARRAYSIZE (pDieSounds) - 1)], 1.0, ATTN_MEDIUM);
 	}
 
 //=========================================================
@@ -349,7 +346,7 @@ void CAGrunt::AlertSound (void)
 	{
 	StopTalking ();
 
-	EMIT_SOUND (ENT (pev), CHAN_VOICE, pAlertSounds[RANDOM_LONG (0, ARRAYSIZE (pAlertSounds) - 1)], 1.0, ATTN_NORM);
+	EMIT_SOUND (ENT (pev), CHAN_VOICE, pAlertSounds[RANDOM_LONG (0, HLARRAYSIZE (pAlertSounds) - 1)], 1.0, ATTN_MEDIUM);
 	}
 
 //=========================================================
@@ -359,7 +356,7 @@ void CAGrunt::AttackSound (void)
 	{
 	StopTalking ();
 
-	EMIT_SOUND (ENT (pev), CHAN_VOICE, pAttackSounds[RANDOM_LONG (0, ARRAYSIZE (pAttackSounds) - 1)], 1.0, ATTN_NORM);
+	EMIT_SOUND (ENT (pev), CHAN_VOICE, pAttackSounds[RANDOM_LONG (0, HLARRAYSIZE (pAttackSounds) - 1)], 1.0, ATTN_MEDIUM);
 	}
 
 //=========================================================
@@ -376,7 +373,7 @@ void CAGrunt::PainSound (void)
 
 	StopTalking ();
 
-	EMIT_SOUND (ENT (pev), CHAN_VOICE, pPainSounds[RANDOM_LONG (0, ARRAYSIZE (pPainSounds) - 1)], 1.0, ATTN_NORM);
+	EMIT_SOUND (ENT (pev), CHAN_VOICE, pPainSounds[RANDOM_LONG (0, HLARRAYSIZE (pPainSounds) - 1)], 1.0, ATTN_MEDIUM);
 	}
 
 //=========================================================
@@ -402,7 +399,8 @@ void CAGrunt::SetYawSpeed (void)
 		case ACT_TURN_RIGHT:
 			ys = 110;
 			break;
-		default:			ys = 100;
+		default:
+			ys = 100;
 		}
 
 	pev->yaw_speed = ys;
@@ -472,9 +470,9 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 
 			switch (RANDOM_LONG (0, 2))
 				{
-				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire1.wav", 1.0, ATTN_NORM, 0, 100);	break;
-				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire2.wav", 1.0, ATTN_NORM, 0, 100);	break;
-				case 2:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire3.wav", 1.0, ATTN_NORM, 0, 100);	break;
+				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire1.wav", 1.0, ATTN_MEDIUM, 0, 100);	break;
+				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire2.wav", 1.0, ATTN_MEDIUM, 0, 100);	break;
+				case 2:	EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, "agrunt/ag_fire3.wav", 1.0, ATTN_MEDIUM, 0, 100);	break;
 				}
 
 			CBaseMonster* pHornetMonster = pHornet->MyMonsterPointer ();
@@ -490,16 +488,16 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 			switch (RANDOM_LONG (0, 1))
 				{
 				// left foot
-				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder2.wav", 1, ATTN_NORM, 0, 70);	break;
-				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder4.wav", 1, ATTN_NORM, 0, 70);	break;
+				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder2.wav", 1, ATTN_MEDIUM, 0, 70);	break;
+				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder4.wav", 1, ATTN_MEDIUM, 0, 70);	break;
 				}
 			break;
 		case AGRUNT_AE_RIGHT_FOOT:
 			// right foot
 			switch (RANDOM_LONG (0, 1))
 				{
-				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder1.wav", 1, ATTN_NORM, 0, 70);	break;
-				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder3.wav", 1, ATTN_NORM, 0, 70);	break;
+				case 0:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder1.wav", 1, ATTN_MEDIUM, 0, 70);	break;
+				case 1:	EMIT_SOUND_DYN (ENT (pev), CHAN_BODY, "player/pl_ladder3.wav", 1, ATTN_MEDIUM, 0, 70);	break;
 				}
 			break;
 
@@ -519,7 +517,7 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 					pHurt->pev->velocity = pHurt->pev->velocity + gpGlobals->v_right * 250;
 					}
 
-				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackHitSounds[RANDOM_LONG (0, ARRAYSIZE (pAttackHitSounds) - 1)], 1.0, ATTN_NORM, 0, 100 + RANDOM_LONG (-5, 5));
+				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackHitSounds[RANDOM_LONG (0, HLARRAYSIZE (pAttackHitSounds) - 1)], 1.0, ATTN_MEDIUM, 0, 100 + RANDOM_LONG (-5, 5));
 
 				Vector vecArmPos, vecArmAng;
 				GetAttachment (0, vecArmPos, vecArmAng);
@@ -528,7 +526,7 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 			else
 				{
 				// Play a random attack miss sound
-				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackMissSounds[RANDOM_LONG (0, ARRAYSIZE (pAttackMissSounds) - 1)], 1.0, ATTN_NORM, 0, 100 + RANDOM_LONG (-5, 5));
+				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackMissSounds[RANDOM_LONG (0, HLARRAYSIZE (pAttackMissSounds) - 1)], 1.0, ATTN_MEDIUM, 0, 100 + RANDOM_LONG (-5, 5));
 				}
 			}
 			break;
@@ -549,7 +547,7 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 					pHurt->pev->velocity = pHurt->pev->velocity + gpGlobals->v_right * -250;
 					}
 
-				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackHitSounds[RANDOM_LONG (0, ARRAYSIZE (pAttackHitSounds) - 1)], 1.0, ATTN_NORM, 0, 100 + RANDOM_LONG (-5, 5));
+				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackHitSounds[RANDOM_LONG (0, HLARRAYSIZE (pAttackHitSounds) - 1)], 1.0, ATTN_MEDIUM, 0, 100 + RANDOM_LONG (-5, 5));
 
 				Vector vecArmPos, vecArmAng;
 				GetAttachment (0, vecArmPos, vecArmAng);
@@ -558,7 +556,7 @@ void CAGrunt::HandleAnimEvent (MonsterEvent_t* pEvent)
 			else
 				{
 				// Play a random attack miss sound
-				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackMissSounds[RANDOM_LONG (0, ARRAYSIZE (pAttackMissSounds) - 1)], 1.0, ATTN_NORM, 0, 100 + RANDOM_LONG (-5, 5));
+				EMIT_SOUND_DYN (ENT (pev), CHAN_WEAPON, pAttackMissSounds[RANDOM_LONG (0, HLARRAYSIZE (pAttackMissSounds) - 1)], 1.0, ATTN_MEDIUM, 0, 100 + RANDOM_LONG (-5, 5));
 				}
 			}
 			break;
@@ -584,7 +582,7 @@ void CAGrunt::Spawn ()
 	m_bloodColor = BLOOD_COLOR_GREEN;
 	pev->effects = 0;
 	pev->health = gSkillData.agruntHealth;
-	m_flFieldOfView = 0.2;// indicates the width of this monster's forward view cone ( as a dotproduct result )
+	m_flFieldOfView = 0.2;// indicates the width of this monster's forward view cone  (as a dotproduct result )
 	m_MonsterState = MONSTERSTATE_NONE;
 	m_afCapability = 0;
 	m_afCapability |= bits_CAP_SQUAD;
@@ -606,27 +604,26 @@ void CAGrunt::Precache ()
 
 	PRECACHE_MODEL ("models/agrunt.mdl");
 
-	for (i = 0; i < ARRAYSIZE (pAttackHitSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pAttackHitSounds); i++)
 		PRECACHE_SOUND ((char*)pAttackHitSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pAttackMissSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pAttackMissSounds); i++)
 		PRECACHE_SOUND ((char*)pAttackMissSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pIdleSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pIdleSounds); i++)
 		PRECACHE_SOUND ((char*)pIdleSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pDieSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pDieSounds); i++)
 		PRECACHE_SOUND ((char*)pDieSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pPainSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pPainSounds); i++)
 		PRECACHE_SOUND ((char*)pPainSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pAttackSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pAttackSounds); i++)
 		PRECACHE_SOUND ((char*)pAttackSounds[i]);
 
-	for (i = 0; i < ARRAYSIZE (pAlertSounds); i++)
+	for (i = 0; i < HLARRAYSIZE (pAlertSounds); i++)
 		PRECACHE_SOUND ((char*)pAlertSounds[i]);
-
 
 	PRECACHE_SOUND ("hassault/hw_shoot1.wav");
 
@@ -653,8 +650,8 @@ Task_t	tlAGruntFail[] =
 Schedule_t	slAGruntFail[] =
 	{
 		{
-			tlAGruntFail,
-			ARRAYSIZE (tlAGruntFail),
+		tlAGruntFail,
+			HLARRAYSIZE (tlAGruntFail),
 			bits_COND_CAN_RANGE_ATTACK1 |
 			bits_COND_CAN_MELEE_ATTACK1,
 			0,
@@ -676,8 +673,8 @@ Task_t	tlAGruntCombatFail[] =
 Schedule_t	slAGruntCombatFail[] =
 	{
 		{
-			tlAGruntCombatFail,
-			ARRAYSIZE (tlAGruntCombatFail),
+		tlAGruntCombatFail,
+			HLARRAYSIZE (tlAGruntCombatFail),
 			bits_COND_CAN_RANGE_ATTACK1 |
 			bits_COND_CAN_MELEE_ATTACK1,
 			0,
@@ -700,8 +697,8 @@ Task_t	tlAGruntStandoff[] =
 Schedule_t slAGruntStandoff[] =
 	{
 		{
-			tlAGruntStandoff,
-			ARRAYSIZE (tlAGruntStandoff),
+		tlAGruntStandoff,
+			HLARRAYSIZE (tlAGruntStandoff),
 			bits_COND_CAN_RANGE_ATTACK1 |
 			bits_COND_CAN_MELEE_ATTACK1 |
 			bits_COND_SEE_ENEMY |
@@ -725,8 +722,8 @@ Task_t	tlAGruntSuppressHornet[] =
 Schedule_t slAGruntSuppress[] =
 	{
 		{
-			tlAGruntSuppressHornet,
-			ARRAYSIZE (tlAGruntSuppressHornet),
+		tlAGruntSuppressHornet,
+			HLARRAYSIZE (tlAGruntSuppressHornet),
 			0,
 			0,
 			"AGrunt Suppress Hornet",
@@ -746,8 +743,8 @@ Task_t	tlAGruntRangeAttack1[] =
 Schedule_t	slAGruntRangeAttack1[] =
 	{
 		{
-			tlAGruntRangeAttack1,
-			ARRAYSIZE (tlAGruntRangeAttack1),
+		tlAGruntRangeAttack1,
+			HLARRAYSIZE (tlAGruntRangeAttack1),
 			bits_COND_NEW_ENEMY |
 			bits_COND_ENEMY_DEAD |
 			bits_COND_HEAVY_DAMAGE,
@@ -770,8 +767,8 @@ Task_t	tlAGruntHiddenRangeAttack1[] =
 Schedule_t	slAGruntHiddenRangeAttack[] =
 	{
 		{
-			tlAGruntHiddenRangeAttack1,
-			ARRAYSIZE (tlAGruntHiddenRangeAttack1),
+		tlAGruntHiddenRangeAttack1,
+			HLARRAYSIZE (tlAGruntHiddenRangeAttack1),
 			bits_COND_NEW_ENEMY |
 			bits_COND_HEAVY_DAMAGE |
 			bits_COND_HEAR_SOUND,
@@ -799,8 +796,8 @@ Task_t	tlAGruntTakeCoverFromEnemy[] =
 Schedule_t	slAGruntTakeCoverFromEnemy[] =
 	{
 		{
-			tlAGruntTakeCoverFromEnemy,
-			ARRAYSIZE (tlAGruntTakeCoverFromEnemy),
+		tlAGruntTakeCoverFromEnemy,
+			HLARRAYSIZE (tlAGruntTakeCoverFromEnemy),
 			bits_COND_NEW_ENEMY,
 			0,
 			"AGruntTakeCoverFromEnemy"
@@ -836,8 +833,8 @@ Task_t	tlAGruntVictoryDance[] =
 Schedule_t	slAGruntVictoryDance[] =
 	{
 		{
-			tlAGruntVictoryDance,
-			ARRAYSIZE (tlAGruntVictoryDance),
+		tlAGruntVictoryDance,
+			HLARRAYSIZE (tlAGruntVictoryDance),
 			bits_COND_NEW_ENEMY |
 			bits_COND_LIGHT_DAMAGE |
 			bits_COND_HEAVY_DAMAGE,
@@ -858,8 +855,8 @@ Task_t	tlAGruntThreatDisplay[] =
 Schedule_t	slAGruntThreatDisplay[] =
 	{
 		{
-			tlAGruntThreatDisplay,
-			ARRAYSIZE (tlAGruntThreatDisplay),
+		tlAGruntThreatDisplay,
+			HLARRAYSIZE (tlAGruntThreatDisplay),
 			bits_COND_NEW_ENEMY |
 			bits_COND_LIGHT_DAMAGE |
 			bits_COND_HEAVY_DAMAGE,
@@ -939,7 +936,7 @@ BOOL CAGrunt::CheckRangeAttack1 (float flDot, float flDist)
 		// !!!LATER - we may wish to do something different for projectile weapons as opposed to instant-hit
 		UTIL_MakeVectors (pev->angles);
 		GetAttachment (0, vecArmPos, vecArmDir);
-		//		UTIL_TraceLine( vecArmPos, vecArmPos + gpGlobals->v_forward * 256, ignore_monsters, ENT(pev), &tr);
+		//		UTIL_TraceLine (vecArmPos, vecArmPos + gpGlobals->v_forward * 256, ignore_monsters, ENT(pev), &tr);
 		UTIL_TraceLine (vecArmPos, m_hEnemy->BodyTarget (vecArmPos), dont_ignore_monsters, ENT (pev), &tr);
 
 		if (tr.flFraction == 1.0 || tr.pHit == m_hEnemy->edict ())
@@ -1183,4 +1180,3 @@ Schedule_t* CAGrunt::GetScheduleOfType (int Type)
 
 	return CSquadMonster::GetScheduleOfType (Type);
 	}
-
