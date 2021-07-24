@@ -5,6 +5,8 @@ A software package for preparation, implementation and evaluation of knowledge c
 
 Инструмент для автоматизированной подготовки, проведения и оценки тестовых заданий
 
+***This project has been frozen | Работа над эти проектом остановлена***
+
 
 #
 
